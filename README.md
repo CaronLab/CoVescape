@@ -60,7 +60,6 @@ suggested command:
 
 This command will create a folder named netMHCpanOUTPUT_DataOutput. This folder contains HLA-specific processed netMHCpan outputs files (.csv), as well as a txt file contain all the names said .csv files. The contents of this folder must be copied (along with the CoVescape.sh file and the netMHCpanOUTPUT.csv file) into a third folder called GetCores (name is trivial). Once in this folder, the GetCores.sh method can be run.
 
-![alt text](Images_readme/B54_MutPosition.png)
 
 ### GetCores.sh
 
