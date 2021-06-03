@@ -80,3 +80,4 @@ Inputs:
 
 This method will generate FC, p-values, as well as heatmaps for mutations categorized by the reference residue, the mutated residue, as well as the entire transition (X->Y) for the various mutations of interest. One particularly important figure here is called ‘boxplot’. It will plot all mutated/reference peptide pairs passing a certain p-value and FC cutoff. This method is most informative when performed on a set of HLA types belonging to a single HLA Supertype.
 
+![alt text](Images_readme/B7_mutation_impact_epitopes_PetersFigure.png)
