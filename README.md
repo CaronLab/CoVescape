@@ -72,6 +72,8 @@ suggested command:
 
 This method will generate a folder named netMHCpanOUTPUT_withCore, containing HLA specific processed netMHCpan files (finishing with ‘withCore’) as well as a text file containing the names of said files. Once again, the contents of this folder (long with the CoVescape.sh script) can be copied into another folder. In this folder, the method PetersFigure.sh can be run.
 
+Example figures from GetCore.sh:
+![alt text](Images_readme/Mutation_impact_on_B7_supertype_GetCore.png)
 
 ### PetersFigure.sh
 
@@ -80,4 +82,5 @@ Inputs:
 
 This method will generate FC, p-values, as well as heatmaps for mutations categorized by the reference residue, the mutated residue, as well as the entire transition (X->Y) for the various mutations of interest. One particularly important figure here is called ‘boxplot’. It will plot all mutated/reference peptide pairs passing a certain p-value and FC cutoff. This method is most informative when performed on a set of HLA types belonging to a single HLA Supertype.
 
+Example figure (boxplot.png) from PetersFigure.sh:
 ![alt text](Images_readme/B7_mutation_impact_epitopes_PetersFigure.png)
