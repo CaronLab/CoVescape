@@ -16,6 +16,10 @@ This pipeline requires the python packages indicated below, as well as netMHCpan
 For details regarding the inputs required by each command, type " ./CoVescape.sh --help " while in the same directory as the CoVescape.sh file.
 
 
+#### Multi-threading:
+Several scripts within the pipeline have been adapted for multiprocessing using the python 'multiprocessing' package (namely PostMHCpan.sh and GetCores.sh). These programs are designed to initiate a new thread for every HLA molecule provided (therefore, analysing 15 HLA molecules will result in 15 threads). As such, analysis of a larger number of HLA molecules will be most efficient an HPC. 
+
+
 #### External dependencies:
 -	pandas 
 -	seaborn & matplotlib
