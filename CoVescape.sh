@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Enter path to directory with the 'scripts' folder in it. Ex: FOLDER = '/home/dhamelin/CoVescape/'
-FOLDER='/Users/davidhamelin/Documents/Graduate_schoold_stuff/COVID_MUT_PIPELINE_TEST/MHC_Class_I/COMBINE_ALL_CODE_FOR_GITHUB_CELLSYSTEMS/REAL_DEALLLLL'
+FOLDER='/Users/davidhamelin/Documents/Graduate_schoold_stuff/COVID_MUT_PIPELINE_TEST/MHC_Class_I/COMBINE_ALL_CODE_FOR_GITHUB_CELLSYSTEMS/TEST4_AddMutationalPatterns'
 
 ####################################### DO NOT CHANGE CODE BELOW THIS LINE
 
@@ -16,7 +16,7 @@ case $key in
     echo "inputs:"
     echo "  -r | --RawMutations: File of raw mutations in .txt format."
     echo "  -h | --HLAlist: list of class I HLA molecules to process. Should provide them in the following format: HLA-A01:01,HLA-A02:01,..."
-    echo "  -o | --OutputFilePATH: path/to/folder in which to store the program outputs"
+    echo "  -o | --OutputFilePATH: path/to/output folder in which to store the program outputs"
     echo "  -p | --netMHCpanPATH: path/to/netMHCpan shell script"
     echo ""
     echo "--script PostnetMHC.sh"
@@ -32,6 +32,11 @@ case $key in
     echo "--script PetersFigure.sh"
     echo "inputs:"
     echo "  -c | --CoreOutput: HLA-specific processed netMHCpan output with information regarding residues predicted to directly interact with binding groove."
+    echo ""
+    echo "--script MutationalPatterns.sh"
+    echo "  -m | --MutationList: Formatted and translated mutation list"
+    
+
     
 
     #EXTENSION="$2"
@@ -96,6 +101,8 @@ case $key in
     shift # past argument
     shift # past value
     ;;
+
+
 
 
 
@@ -180,6 +187,21 @@ if [ ! -z "${Script}"  ] ; then
             echo "one or more arguments are missing"
 
         fi
+
+
+
+    elif [ $Script == "MutationalPatterns.sh" ]; then
+        echo "Running MutationalPatterns.sh"
+        if [ ! -z "${mutations}" ]; then
+            echo "We're here"
+            $FOLDER/scripts/MutationalPatterns/$Script $mutations $FOLDER 
+
+        else
+            echo "one or more arguments are missing"
+
+        fi
+
+
 
     else echo "option does not correspond to any script."
 
