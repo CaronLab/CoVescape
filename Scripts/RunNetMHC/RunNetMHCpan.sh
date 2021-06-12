@@ -18,9 +18,9 @@ echo "This is CoVescape directory: ${CoVpath}"
 CurrentDIR=$(pwd)
 echo "This is current dir $CurrentDIR"
 
-cd $CoVpath/scripts/RunNetMHC/
+#cd $CoVpath/scripts/RunNetMHC/
 
-python3 V4Acquire_Juliesmutations_OUTPUTCOMPUTECANADA_NoDuplicates.py $CurrentDIR/$muts $HLA $OutputPATH $netMHC 
+python3 $CoVpath/scripts/RunNetMHC/V4Acquire_Juliesmutations_OUTPUTCOMPUTECANADA_NoDuplicates.py $CurrentDIR/$muts $HLA $OutputPATH $netMHC $CoVpath
 
 cd $OutputPATH/
 chmod -R 755 $OutputPATH/

@@ -374,7 +374,7 @@ def Incorporte_Core(HLA, value, Results_file, HLA_Specific_DataDict, conn):
     Frame_to_csv.drop(['Reoccuring', 'Mut rank qual', 'Ref rank qual'], inplace = True, axis = 1)
     Mutated_peptides = Frame_to_csv['Peptide_Mut'].to_numpy()
     Frame_to_csv.drop(['Peptide_Mut'], inplace = True, axis = 1)
-    Frame_to_csv.insert(loc = 24, column = 'Peptide_Mut', value = Mutated_peptides)
+    Frame_to_csv.insert(loc = 10, column = 'Peptide_Mut', value = Mutated_peptides)
 
     Frame_to_csv.to_csv('%s/%s_withCore.csv'% ('Results_withCore', HLA)) #Output to csv.
     print(Frame_to_csv)

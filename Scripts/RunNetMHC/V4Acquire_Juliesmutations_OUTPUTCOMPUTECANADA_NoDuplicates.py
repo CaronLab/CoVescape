@@ -185,12 +185,12 @@ while True:
     
 
     try:
-        with open("./data/Reference_Seqs_noORF9.txt", "rU") as File: #open file containing reference protein sequences, store in  dictionary (key = protein name, item = protein sequence)
+        with open(f"{sys.argv[5]}/scripts/RunNetMHC/data/Reference_Seqs_noORF9.txt", "rU") as File: #open file containing reference protein sequences, store in  dictionary (key = protein name, item = protein sequence)
             for record in SeqIO.parse(File, "fasta"):
                 RefProteins_aa[record.id] = record.seq
 
 
-        with open('./data/Refsequence_Nuc.fasta', "rU") as File: #Open file containing all potentially mutated genomes.   
+        with open(f'{sys.argv[5]}/scripts/RunNetMHC/data/Refsequence_Nuc.fasta', "rU") as File: #Open file containing all potentially mutated genomes.   
             for record in SeqIO.parse(File, "fasta"): #Parse through all genomes in the fasta file.
                 RefProteins_nuc = {}
                 sequence = record.seq
@@ -284,7 +284,7 @@ while True:
         
 
         ###################
-        AllMutations_Frame = AllMutations_Frame[AllMutations_Frame['N_Mutants'] > 5000]
+        ###################AllMutations_Frame = AllMutations_Frame[AllMutations_Frame['N_Mutants'] > 5000]
         ###################
 
         #AllMutations_Frame.to_csv('JCMutations_Stacked.csv')

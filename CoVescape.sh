@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #Enter path to directory with the 'scripts' folder in it. Ex: FOLDER = '/home/dhamelin/CoVescape/'
-FOLDER='/Users/davidhamelin/Documents/Graduate_schoold_stuff/COVID_MUT_PIPELINE_TEST/MHC_Class_I/COMBINE_ALL_CODE_FOR_GITHUB_CELLSYSTEMS/TEST4_AddMutationalPatterns'
-
+FOLDER='/Users/davidhamelin/Documents/Graduate_schoold_stuff/COVID_MUT_PIPELINE_TEST/MHC_Class_I/COMBINE_ALL_CODE_FOR_GITHUB_CELLSYSTEMS/TEST5_AddMutDistFigure'
+netMHCpanPATH="/Users/davidhamelin/Documents/Graduate_schoold_stuff/COVID_MUT_PIPELINE_TEST/MHC_Class_I/COMBINE_ALL_CODE_FOR_GITHUB_CELLSYSTEMS/TEST3_CLEANEDUP_ComputeCanada/netMHCpan"
 ####################################### DO NOT CHANGE CODE BELOW THIS LINE
 
 POSITIONAL=()
@@ -17,7 +17,7 @@ case $key in
     echo "  -r | --RawMutations: File of raw mutations in .txt format."
     echo "  -h | --HLAlist: list of class I HLA molecules to process. Should provide them in the following format: HLA-A01:01,HLA-A02:01,..."
     echo "  -o | --OutputFilePATH: path/to/output folder in which to store the program outputs"
-    echo "  -p | --netMHCpanPATH: path/to/netMHCpan shell script"
+    #echo "  -p | --netMHCpanPATH: path/to/netMHCpan shell script"
     echo ""
     echo "--script PostnetMHC.sh"
     echo "inputs:"
@@ -35,6 +35,10 @@ case $key in
     echo ""
     echo "--script MutationalPatterns.sh"
     echo "  -m | --MutationList: Formatted and translated mutation list"
+    echo ""
+    echo "--script EpiMutDist.sh"
+    echo "  -m | --MutationList: Formatted and translated mutation list"
+    echo "  -c | --CoreOutput: HLA-specific processed netMHCpan output with information regarding residues predicted to directly interact with binding groove."
     
 
     
@@ -67,11 +71,11 @@ case $key in
     shift # past value
     ;;
 
-    -p|--netMHCpanPATH)
-    netMHCpanPATH="$2"
-    shift # past argument
-    shift # past value
-    ;;
+    #-p|--netMHCpanPATH)
+    #netMHCpanPATH="$2"
+    #shift # past argument
+    #shift # past value
+    #;;
 
 
     ########################################PostNetMHCpan
@@ -200,6 +204,21 @@ if [ ! -z "${Script}"  ] ; then
             echo "one or more arguments are missing"
 
         fi
+
+
+
+
+    elif [ $Script == "EpiMutDist.sh" ]; then
+        echo "Running EpiMutDist.sh"
+        if [ ! -z "${mutations}" ] && [ ! -z "${coreOut}" ]; then
+            echo "We're here"
+            $FOLDER/scripts/EpiMutDist/$Script $mutations $coreOut $FOLDER 
+
+        else
+            echo "one or more arguments are missing"
+
+        fi
+
 
 
 
