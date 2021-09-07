@@ -111,4 +111,4 @@ suggested command: ./CoVescape.sh –script EpiMutDist.sh --MutationList _MutFre
 
 This script will determine the distribution of netMHCpan-predicted SARS-CoV-2 epitopes, SARS-CoV_2 mutations, as well as experimentally validated CD8+ epitopes along a selected list of SARS-CoV-2 proteins. This script will also generate a list of experimentally validated epitopes  predicted to be lost due to observed mutation events.
 
-![alt text](Images_readme/Mutations_Epitope_Distribution.pdf)
+![alt text](Images_readme/Mutations_Epitopes_Distribution.png)
